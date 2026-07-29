@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_back">Retour</string>
+    <string name="common_cancel">Annuler</string>
+    <string name="common_shuffle">Aléatoire</string>
+    <string name="common_delete">Supprimer</string>
+    <string name="common_playlist">Playlist</string>
+    <string name="common_play">Lire</string>
+    <string name="playlist_action_add_songs">Ajouter</string>
+    <string name="playlist_action_delete_playlist">Supprimer la playlist</string>
+    <string name="playlist_action_edit_playlist">Modifier la playlist</string>
+    <string name="playlist_action_export_playlist">Exporter la playlist</string>
+    <string name="playlist_action_play_it">Lire</string>
+    <string name="playlist_action_remove_songs">Retirer</string>
+    <string name="playlist_action_reorder_songs">Réorganiser</string>
+    <string name="playlist_action_set_default_transition">Définir la transition par défaut</string>
+    <string name="playlist_cd_add_songs">Ajouter des titres</string>
+    <string name="playlist_cd_remove_songs">Retirer des titres</string>
+    <string name="playlist_cd_reorder_songs">Réorganiser les titres</string>
+    <string name="playlist_dialog_delete_body">Es-tu sûr de vouloir supprimer cette playlist ?</string>
+    <string name="playlist_dialog_delete_title">Supprimer la playlist ?</string>
+    <string name="playlist_empty_add_hint">Appuie sur \'Ajouter des titres\' pour commencer.</string>
+    <string name="playlist_empty_folder_label">Ce dossier ne contient aucun titre.</string>
+    <string name="playlist_empty_title">Cette playlist est vide.</string>
+    <string name="playlist_more_options_title">Plus d\'options</string>
+    <string name="playlist_options_title">Options de la playlist</string>
+    <string name="playlist_song_duration_line">%1$s • %2$s</string>
+    <string name="playlist_sort_songs_title">Trier les titres</string>
+    <string name="library_toast_added_to_queue">Ajouté à la file d\'attente</string>
+    <string name="library_toast_playing_next">Lecture suivante</string>
+</resources>

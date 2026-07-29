@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to PixelPlayerOSS will be documented in this file.
+
+## [0.1.0] - 2026-06-09
+
+### Initial release
+- First public FOSS release of PixelPlayerOSS, an OSS-focused Android music player.
+- Includes local music playback, playlists, favorites, lyrics, listening stats, dynamic Material 3 theming, widgets, and backup/restore.
+- Keeps self-hosted library support for Navidrome/Subsonic and Jellyfin, plus optional LRCLIB lyrics and Deezer artist artwork lookups.
+
+### Removed for FOSS
+- Removed non-FOSS and Google Play oriented integrations: Telegram, NetEase, QQ Music, Google Drive, Gemini, Cast, Wear OS, Play Store billing, Firebase, Crashlytics, and Google Play Services runtime dependencies.
+- Removed public scrobbling integrations such as Last.fm and ListenBrainz; self-hosted Navidrome/Subsonic playback reporting remains scoped to the user's own server.
+- Removed bundled translations and the in-app language selector for the first FOSS release; the initial source release ships with English resources only.
+- Removed release paths that depended on local/private signing artifacts, dummy signing values, or app-store-only assumptions.
+
+### Release readiness
+- Added F-Droid metadata, Fastlane store metadata, dependency/license documentation, privacy notes, security notes, and contributor guidance.
+- Release builds now stay unsigned when local signing keys are absent, and `pixelplayer.disableReleaseSigning=true` forces unsigned verification builds even on a maintainer machine.
+- Documented third-party asset and dependency licenses, including native/binary Maven artifacts and JitPack source trails.
+
+### Security and privacy
+- The loopback cloud-stream proxy now requires a per-session token so other apps on the device cannot stream the user's cloud library by guessing local proxy URLs.
+- Backup restore now ignores preference keys owned by dedicated module handlers, preventing crafted global-settings payloads from bypassing module validation.
+- Release logging is tightened so HTTP request headers and remaining raw Android logs do not bypass the Timber release filter.
+
+### App polish included in this FOSS release
+- Added smart playlist persistence, duplicate-track scanning, playback speed control, clearer playback/sync failure messages, and retry actions on album/artist detail failures.
+- Improved accessibility for toggle states and song row actions.

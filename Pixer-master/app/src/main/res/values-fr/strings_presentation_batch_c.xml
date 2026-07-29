@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="library_error_loading_songs">Erreur lors du chargement des titres</string>
+    <string name="library_error_loading_albums">Erreur lors du chargement des albums</string>
+    <string name="library_error_loading_artists">Erreur lors du chargement des artistes</string>
+    <string name="library_retry">Réessayer</string>
+
+    <string name="library_no_songs_in_library_message">Aucun titre trouvé dans ta bibliothèque.</string>
+    <string name="library_no_songs_rescan_hint">Essaie de rescanner ta bibliothèque dans les paramètres si tu as de la musique sur ton appareil.</string>
+    <string name="cd_no_songs_in_library">Aucun titre trouvé</string>
+
+    <string name="library_action_new">Nouveau</string>
+    <string name="cd_create_new_playlist">Créer une nouvelle playlist</string>
+    <string name="cd_import_m3u_playlist">Importer une playlist M3U</string>
+    <string name="cd_locate_current_song">Localiser le titre en cours</string>
+    <string name="library_storage_filter_all_songs">Tous les titres</string>
+    <string name="library_storage_filter_online">Cloud</string>
+    <string name="library_storage_filter_offline">Local</string>
+    <string name="cd_sort_options">Options de tri</string>
+
+    <string name="lyrics_synced_badge">SYNCHRONISÉES</string>
+    <string name="song_field_artist_optional">Artiste (optionnel)</string>
+
+    <string name="song_picker_title">Ajouter des titres</string>
+    <string name="cd_confirm_add_songs">Ajouter les titres sélectionnés</string>
+    <string name="song_picker_action_add">Ajouter</string>
+    <string name="song_picker_search_label">Rechercher ou filtrer des titres…</string>
+    <string name="song_picker_filter_favorites">Aimés</string>
+    <string name="song_picker_error_load_failed">Échec du chargement des titres</string>
+    <string name="song_picker_load_more">Charger plus</string>
+
+
+    <string name="lib_empty_songs_all_title">Aucun titre pour l\'instant</string>
+    <string name="lib_empty_songs_all_subtitle">Ajoute de la musique à ton appareil ou synchronise une source cloud pour commencer à écouter.</string>
+    <string name="lib_empty_songs_offline_title">Aucun titre téléchargé trouvé</string>
+    <string name="lib_empty_songs_offline_subtitle">Tu n\'as encore téléchargé aucun titre sur cet appareil.</string>
+    <string name="lib_empty_songs_online_title">Aucun titre en ligne trouvé</string>
+    <string name="lib_empty_songs_online_subtitle">Synchronise des titres Deezer, ou passe à une source hors ligne.</string>
+    <string name="lib_empty_albums_all_title">Aucun album disponible</string>
+    <string name="lib_empty_albums_all_subtitle">Les albums apparaîtront ici dès que ta bibliothèque aura des titres regroupés.</string>
+    <string name="lib_empty_albums_offline_title">Aucun album téléchargé trouvé</string>
+    <string name="lib_empty_albums_offline_subtitle">Des titres téléchargés sont nécessaires pour créer des groupes d\'albums hors ligne.</string>
+    <string name="lib_empty_albums_online_title">Aucun album en ligne trouvé</string>
+    <string name="lib_empty_albums_online_subtitle">Connecte-toi à Deezer pour synchroniser tes albums.</string>
+    <string name="lib_empty_artists_all_title">Aucun artiste disponible</string>
+    <string name="lib_empty_artists_all_subtitle">Les artistes s\'affichent une fois que des titres ont été indexés depuis n\'importe quelle source.</string>
+    <string name="lib_empty_artists_offline_title">Aucun artiste téléchargé trouvé</string>
+    <string name="lib_empty_artists_offline_subtitle">Aucune métadonnée d\'artiste n\'est disponible pour les titres téléchargés pour l\'instant.</string>
+    <string name="lib_empty_artists_online_title">Aucun artiste en ligne trouvé</string>
+    <string name="lib_empty_artists_online_subtitle">Connecte-toi à Deezer pour synchroniser tes artistes.</string>
+    <string name="lib_empty_liked_all_title">Aucun titre aimé pour l\'instant</string>
+    <string name="lib_empty_liked_all_subtitle">Appuie sur l\'icône cœur pendant la lecture d\'un titre pour l\'enregistrer ici.</string>
+    <string name="lib_empty_liked_offline_title">Aucun titre aimé téléchargé</string>
+    <string name="lib_empty_liked_offline_subtitle">Les titres que tu aimes hors ligne apparaîtront ici.</string>
+    <string name="lib_empty_liked_online_title">Aucun titre aimé en ligne</string>
+    <string name="lib_empty_liked_online_subtitle">Les titres que tu aimes sur Deezer apparaîtront ici.</string>
+    <string name="lib_empty_folders_title">Aucun dossier trouvé</string>
+    <string name="lib_empty_folders_subtitle">Les dossiers du stockage interne contenant de la musique apparaîtront ici.</string>
+    <string name="lib_empty_playlists_title">Aucune playlist pour l\'instant</string>
+    <string name="lib_empty_playlists_subtitle">Crée ta première playlist pour organiser ta bibliothèque.</string>
+</resources>

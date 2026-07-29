@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="presentation_batch_e_queue_empty">La file d\'attente est vide.</string>
+    <string name="presentation_batch_e_cd_queue_actions">Actions de la file d\'attente</string>
+    <string name="presentation_batch_e_action_clear_queue">Vider la file d\'attente</string>
+    <string name="presentation_batch_e_action_save_as_playlist">Enregistrer comme playlist</string>
+    <string name="presentation_batch_e_action_locate_current_song">Localiser le titre en cours</string>
+    <string name="presentation_batch_e_queue_named_suffix">File d\'attente de %1$s</string>
+    <string name="presentation_batch_e_queue_current">File d\'attente actuelle</string>
+    <string name="presentation_batch_e_removed">supprimé</string>
+    <string name="presentation_batch_e_clear_queue_dialog_title">Vider la file d\'attente</string>
+    <string name="presentation_batch_e_clear_queue_dialog_message">Es-tu sûr de vouloir retirer tous les titres de la file d\'attente à l\'exception du titre en cours ?</string>
+    <string name="presentation_batch_e_next_up">À suivre</string>
+    <string name="presentation_batch_e_queue_subtitle_empty">La file d\'attente est vide pour l\'instant.</string>
+    <string name="presentation_batch_e_queue_source_fallback">File d\'attente</string>
+    <string name="presentation_batch_e_cd_toggle_shuffle">Activer/désactiver l\'aléatoire</string>
+    <string name="presentation_batch_e_cd_toggle_repeat">Activer/désactiver la répétition</string>
+    <string name="presentation_batch_e_cd_sleep_timer">Minuterie de veille</string>
+    <string name="presentation_batch_e_save_as_playlist_sheet_title">Enregistrer comme playlist</string>
+    <string name="presentation_batch_e_deselect_all">Tout désélectionner</string>
+    <string name="presentation_batch_e_playlist_name_label">Nom de la playlist</string>
+    <string name="presentation_batch_e_search_songs_to_include_placeholder">Rechercher des titres à inclure…</string>
+    <string name="presentation_batch_e_save_as_format">Enregistrer sous : %1$s</string>
+    <string name="presentation_batch_e_enter_playlist_name">Entre un nom de playlist</string>
+    <string name="presentation_batch_e_no_songs_match_query">Aucun titre ne correspond à \"%1$s\"</string>
+    <string name="presentation_batch_e_cd_dismiss_song">Ignorer le titre</string>
+    <string name="presentation_batch_e_cd_remove_from_playlist">Retirer de la playlist</string>
+    <string name="presentation_batch_e_more_options_for_song">Plus d\'options pour %1$s</string>
+
+    <plurals name="presentation_batch_e_queue_tracks_lined_up">
+        <item quantity="one">1 titre en attente.</item>
+        <item quantity="other">%d titres en attente.</item>
+    </plurals>
+    <plurals name="presentation_batch_e_n_songs_selected">
+        <item quantity="one">%d titre sélectionné</item>
+        <item quantity="other">%d titres sélectionnés</item>
+    </plurals>
+
+    <string name="presentation_batch_e_no_playlist_created">Aucune playlist n\'a été créée.</string>
+    <string name="presentation_batch_e_new_playlist_hint">Appuie sur le bouton \'Nouvelle playlist\' pour commencer.</string>
+
+    <string name="presentation_batch_e_create_playlist_title">Créer une playlist</string>
+    <string name="presentation_batch_e_create_playlist_subtitle">Choisis le mode de création.</string>
+    <string name="presentation_batch_e_creation_mode_manual">Manuel</string>
+    <string name="presentation_batch_e_creation_mode_manual_subtitle">Personnalise la pochette, l\'icône, la forme et choisis toi-même les titres.</string>
+
+    <string name="presentation_batch_e_reset_presets_title">Réinitialiser les préréglages</string>
+    <string name="presentation_batch_e_reset_presets_message">Cela restaurera l\'ordre et la visibilité par défaut des préréglages. Continuer ?</string>
+    <string name="presentation_batch_e_manage_presets_title">Gérer les préréglages</string>
+    <string name="presentation_batch_e_presets_drag_hint">Glisser pour réorganiser • Toucher l\'œil pour afficher ou masquer</string>
+    <string name="presentation_batch_e_cd_reset_presets_default">Réinitialiser par défaut</string>
+    <string name="presentation_batch_e_cd_visible">Visible</string>
+    <string name="presentation_batch_e_cd_hidden">Masqué</string>
+
+    <string name="presentation_batch_e_daily_mix_how_title">Comment ta Mix du jour est créée</string>
+    <string name="presentation_batch_e_daily_mix_how_body">Ta Mix du jour est composée de tes titres favoris et les plus écoutés. Nous ajoutons aussi des titres d\'artistes et de genres que tu aimes pour te faire découvrir de nouveaux morceaux.</string>
+    <string name="presentation_batch_e_daily_mix_cost_hint">Nous utilisons un petit échantillon pour limiter les coûts</string>
+    <string name="presentation_batch_e_daily_mix_updating">Mise à jour…</string>
+    <string name="presentation_batch_e_daily_mix_update">Mettre à jour la Mix du jour</string>
+</resources>
