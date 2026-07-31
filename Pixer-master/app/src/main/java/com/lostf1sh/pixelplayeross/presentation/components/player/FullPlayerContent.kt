@@ -1029,7 +1029,7 @@ private fun FullPlayerAlbumCoverSection(
         val carouselHeight = when (carouselStyle) {
             CarouselStyle.NO_PEEK -> maxWidth
             CarouselStyle.ONE_PEEK -> maxWidth * 0.8f
-            CarouselStyle.TWO_PEEK -> maxWidth * 0.6f
+            CarouselStyle.TWO_PEEK -> maxWidth - 64.dp // keep the focused item square: matches the Pager's contentPadding (2*28dp peek + 8dp itemSpacing/2*2) in RoundedParallaxCarousell's TWO_PEEK branch
             else -> maxWidth * 0.8f
         }
 

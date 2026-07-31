@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.pager.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -139,10 +140,38 @@ fun RoundedHorizontalMultiBrowseCarousel(
     val density = LocalDensity.current
     val carouselWidthPx = with(density) { carouselWidth.toPx() }
 
+    if (carouselStyle == CarouselStyle.TWO_PEEK) {
+        // TWO_PEEK (symmetric peek on both sides, like the real Deezer app) is implemented as a
+        // plain Pager with contentPadding instead of going through the keyline/Strategy engine
+        // below: that engine only ever derives a single trailing peek from an [anchor,large,...]
+        // arrangement (that's what ONE_PEEK/NO_PEEK need it for), and hand-rolling a symmetric
+        // 5-keyline window for it produced unpredictable, hard-to-debug clipping. contentPadding
+        // gives an exact, easy-to-reason-about peek width on both edges with no derived math.
+        val peekWidth = 28.dp
+        val scope = remember { CarouselItemScopeImpl(itemInfo = CarouselItemDrawInfoImpl()) }
+        HorizontalPager(
+            state = state.pagerState,
+            contentPadding = PaddingValues(horizontal = peekWidth + itemSpacing / 2),
+            pageSpacing = itemSpacing,
+            flingBehavior = flingBehavior,
+            userScrollEnabled = userScrollEnabled,
+            key = itemKey,
+            modifier = modifier
+        ) { page ->
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .clip(RoundedCornerShape(itemCornerRadius))
+            ) {
+                scope.content(page)
+            }
+        }
+        return
+    }
+
     val maxNonFocalItems = when (carouselStyle) {
         CarouselStyle.NO_PEEK -> 0
         CarouselStyle.ONE_PEEK -> 1
-        CarouselStyle.TWO_PEEK -> 2
         else -> 1 // Default to one peek
     }
 
@@ -193,21 +222,7 @@ fun RoundedHorizontalMultiBrowseCarousel(
                     mediumCounts = intArrayOf(0),
                     smallCounts = intArrayOf(1)
                 )
-                CarouselStyle.TWO_PEEK -> {
-                    // Manual keyline definition for [small, large, small]
-                    val largeSize = carouselWidthPx * 0.6f // Main item is 60% of width
-                    val smallSize = carouselWidthPx * 0.45f // Peek items are 45% of width
-                    keylineListOf(
-                        carouselMainAxisSize = carouselWidthPx,
-                        itemSpacing = spacingPx,
-                        carouselAlignment = CarouselAlignment.Center
-                    ) {
-                        add(smallSize) // Previous peek
-                        add(largeSize) // Focused item
-                        add(smallSize) // Next peek
-                    }
-                }
-                else -> multiBrowseKeylineList( // Default to one peek
+                else -> multiBrowseKeylineList( // Default to one peek (TWO_PEEK returns earlier above)
                     density = density,
                     carouselMainAxisSize = carouselWidthPx,
                     preferredItemSize = carouselWidthPx * 0.8f,
