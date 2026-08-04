@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.sp
 import androidx.media3.common.Player
 import com.lostf1sh.pixelplayeross.R
 import com.lostf1sh.pixelplayeross.data.model.Song
+import com.lostf1sh.pixelplayeross.presentation.components.TwoPeekHorizontalInset
 import java.util.concurrent.TimeUnit
 
 @Composable
@@ -213,8 +214,14 @@ private fun DeezerPlayerCover(
     hasLyrics: Boolean,
     onLyricsClick: () -> Unit
 ) {
-    val carouselWidth = minOf(availableWidth - 16.dp, availableHeight * 0.5f)
-    val coverSide = carouselWidth * 0.6f - 16.dp
+    // The carousel is full-bleed: the previous/next covers have to reach the screen edges, so the
+    // carousel takes the whole body width and the focused cover is the square left over once the
+    // two peeks and their gaps are removed. The height factor is only a guard rail for unusually
+    // short screens (where the cover shrinks instead of squeezing the controls off the bottom); it
+    // is deliberately loose enough never to bite on a normal phone, otherwise it would shrink the
+    // carousel below the body width and pull the peeks away from the screen edges.
+    val coverSide = minOf(availableWidth - TwoPeekHorizontalInset, availableHeight * 0.55f)
+    val carouselWidth = coverSide + TwoPeekHorizontalInset
 
     Box(
         modifier = Modifier.fillMaxWidth(),

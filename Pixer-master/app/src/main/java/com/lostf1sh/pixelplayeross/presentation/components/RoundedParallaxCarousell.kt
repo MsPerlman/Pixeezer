@@ -56,6 +56,19 @@ import kotlinx.coroutines.flow.distinctUntilChanged
    PUBLIC API
    ================================================================================================ */
 
+/** Width of the previous/next sliver visible on each edge in [CarouselStyle.TWO_PEEK]. */
+val TwoPeekPeekWidth: Dp = 16.dp
+
+/** Gap between the focused item and each peek in [CarouselStyle.TWO_PEEK]. */
+val TwoPeekPageSpacing: Dp = 16.dp
+
+/**
+ * Horizontal space the TWO_PEEK layout takes away from the carousel width (peek + gap, on both
+ * sides). The focused item is therefore `carouselWidth - TwoPeekHorizontalInset` wide, and callers
+ * must use the same value as the carousel height to keep it square.
+ */
+val TwoPeekHorizontalInset: Dp = (TwoPeekPeekWidth + TwoPeekPageSpacing) * 2f
+
 /** Carousel state (identical to M3's, but standalone) */
 @ExperimentalMaterial3Api
 class CarouselState(
@@ -147,12 +160,18 @@ fun RoundedHorizontalMultiBrowseCarousel(
         // arrangement (that's what ONE_PEEK/NO_PEEK need it for), and hand-rolling a symmetric
         // 5-keyline window for it produced unpredictable, hard-to-debug clipping. contentPadding
         // gives an exact, easy-to-reason-about peek width on both edges with no derived math.
-        val peekWidth = 28.dp
+        //
+        // Geometry is fixed by TwoPeekPeekWidth/TwoPeekPageSpacing rather than the caller's
+        // [itemSpacing], because the focused item must stay square: its width is
+        // `carouselWidth - TwoPeekHorizontalInset`, which callers also use as the carousel height.
+        // With a 16dp peek and a 16dp gap the two neighbours reach the carousel's very edges,
+        // exactly like the real Deezer player.
         val scope = remember { CarouselItemScopeImpl(itemInfo = CarouselItemDrawInfoImpl()) }
         HorizontalPager(
             state = state.pagerState,
-            contentPadding = PaddingValues(horizontal = peekWidth + itemSpacing / 2),
-            pageSpacing = itemSpacing,
+            contentPadding = PaddingValues(horizontal = TwoPeekPeekWidth + TwoPeekPageSpacing),
+            pageSpacing = TwoPeekPageSpacing,
+            beyondViewportPageCount = 1,
             flingBehavior = flingBehavior,
             userScrollEnabled = userScrollEnabled,
             key = itemKey,

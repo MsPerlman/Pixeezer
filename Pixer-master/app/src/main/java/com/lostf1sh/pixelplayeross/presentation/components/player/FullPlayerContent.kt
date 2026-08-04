@@ -128,6 +128,7 @@ import com.lostf1sh.pixelplayeross.presentation.components.AlbumCarouselSection
 import com.lostf1sh.pixelplayeross.presentation.components.AutoScrollingTextOnDemand
 import com.lostf1sh.pixelplayeross.presentation.components.LocalMaterialTheme
 import com.lostf1sh.pixelplayeross.presentation.components.LyricsSheet
+import com.lostf1sh.pixelplayeross.presentation.components.TwoPeekHorizontalInset
 import com.lostf1sh.pixelplayeross.presentation.components.scoped.rememberSmoothProgress
 import com.lostf1sh.pixelplayeross.presentation.components.subcomps.FetchLyricsDialog
 import com.lostf1sh.pixelplayeross.presentation.viewmodel.LyricsSearchUiState
@@ -1029,7 +1030,7 @@ private fun FullPlayerAlbumCoverSection(
         val carouselHeight = when (carouselStyle) {
             CarouselStyle.NO_PEEK -> maxWidth
             CarouselStyle.ONE_PEEK -> maxWidth * 0.8f
-            CarouselStyle.TWO_PEEK -> maxWidth - 64.dp // keep the focused item square: matches the Pager's contentPadding (2*28dp peek + 8dp itemSpacing/2*2) in RoundedParallaxCarousell's TWO_PEEK branch
+            CarouselStyle.TWO_PEEK -> maxWidth - TwoPeekHorizontalInset // keep the focused item square: same inset the TWO_PEEK Pager removes from its width via contentPadding + pageSpacing
             else -> maxWidth * 0.8f
         }
 
